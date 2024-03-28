@@ -1,0 +1,13 @@
+<h1>All Posts</h1>
+<%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure you want to logout?" }, class: "logout-button" %>
+
+  <div class="post-container">
+  <% @posts.each do |post| %>
+    <div class="post-card">
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <p><strong>Author:</strong> <%= post.user.username %></p>
+    </div>
+  <% end %>
+</div>
+
